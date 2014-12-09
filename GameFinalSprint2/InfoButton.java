@@ -17,7 +17,7 @@ public class InfoButton extends Buttons
     public void act() 
     {
         // Add your action code here.
-
+        //e
         if(Greenfoot.mouseClicked(this)){
 
             if(!textShowed){                
