@@ -10,6 +10,7 @@ public class MainBoat extends Actor
 { 
     //Movement variable of the boat
     int fast = 8;
+    int medium = 4;
     int slow  = 1; 
 public void act() 
     {
@@ -30,17 +31,15 @@ public void act()
             } 
         }
 ///////////////////////////////////////////////////////////////////////////////////////////   
-/// Function which make the movement happen and also rotates at he given X and Y///////////
+/// Function which makes the movement happen and also rotates at the given X and Y///////////
 ///////////////////////////////////////////////////////////////////////////////////////////
-    public void movement() {
-        move(-slow);
+public void movement() {
+    move(-slow);
      if (getX() <=  300 && getY() == 61) {
        for(int i = 0; i <= 90; i++) {
           // Greenfoot.delay(1);
             setRotation(-i);
             setLocation(getX() - slow, getY());
-         
-        
         }
     
 }
