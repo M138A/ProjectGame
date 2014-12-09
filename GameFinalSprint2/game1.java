@@ -13,8 +13,22 @@ private int spawnCounter = 0;
 public void act() {  
     
     if (spawnCounter > 500) {  
-        spawnCounter = 0;  
-        addObject(new BoatBig(),800,61);  
+        spawnCounter = 0;
+        double spawnRandom = Math.random();
+        if (spawnRandom <= 0.33)
+        {
+            addObject(new BoatBig(),800,61);
+            System.out.println(spawnRandom);
+        } else if (spawnRandom >= 0.33 && spawnRandom <= 0.66)
+        {
+            addObject(new BoatMedium(), 800, 61);
+            System.out.println(spawnRandom);
+        } else 
+        {
+            addObject(new BoatSmall(), 800, 61);
+            System.out.println(spawnRandom);
+        }
+        spawnRandom = 0;
     }  
     spawnCounter++;  
 

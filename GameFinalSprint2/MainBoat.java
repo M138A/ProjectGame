@@ -20,7 +20,7 @@ public void act()
 ///////////////////////////////////////////////////////////////////////////////////////////
     public void Colission() {
         Actor haven = getOneIntersectingObject(Havenfoot2.class);
-        Actor boat = getOneIntersectingObject(BoatBig.class);
+        Actor boat = getOneIntersectingObject(MainBoat.class);
        if (haven != null || boat != null) {
             World world;
             world = getWorld();
