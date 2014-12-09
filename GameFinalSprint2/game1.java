@@ -9,10 +9,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class game1 extends World
 {
 private int spawnCounter = 0;  
-  
-public void act() {  
-   
-    if (spawnCounter > 500) {  
+private int spawnRateCounter = 0;  
+public void act() {     
+    spawnRateCounter++;
+    if( spawnRateCounter <= 700)
+    {
+        spawnRateSlow();
+    } else if (spawnRateCounter >= 700 && spawnRateCounter <= 1400)
+    {
+        spawnRateMedium();
+    } else 
+    {
+        spawnRateFast();
+    }
+    
+}
+    public void spawnRateSlow()
+    {
+        if (spawnCounter > 500) {  
         spawnCounter = 0;
         double spawnRandom = Math.random();
         if (spawnRandom <= 0.33)
@@ -28,9 +42,45 @@ public void act() {
         spawnRandom = 0;
     }  
     spawnCounter++;  
-
-}
-
+    }
+    public void spawnRateMedium()
+    {
+        if (spawnCounter > 300) {  
+        spawnCounter = 0;
+        double spawnRandom = Math.random();
+        if (spawnRandom <= 0.33)
+        {
+            addObject(new BoatBig(),800,61);
+        } else if (spawnRandom >= 0.33 && spawnRandom <= 0.66)
+        {
+            addObject(new BoatMedium(), 800, 61);
+        } else 
+        {
+            addObject(new BoatSmall(), 800, 61);
+        }
+        spawnRandom = 0;
+    }  
+    spawnCounter++;  
+    }
+    public void spawnRateFast()
+    {
+        if (spawnCounter > 200) {  
+        spawnCounter = 0;
+        double spawnRandom = Math.random();
+        if (spawnRandom <= 0.33)
+        {
+            addObject(new BoatBig(),800,61);
+        } else if (spawnRandom >= 0.33 && spawnRandom <= 0.66)
+        {
+            addObject(new BoatMedium(), 800, 61);
+        } else 
+        {
+            addObject(new BoatSmall(), 800, 61);
+        }
+        spawnRandom = 0;
+    }  
+    spawnCounter++;  
+    }
     public game1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
