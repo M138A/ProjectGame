@@ -8,12 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainBoat extends Actor
 { 
+    //Movement variable of the boat
     int fast = 8;
     int slow  = 1; 
 public void act() 
     {
      
     }   
+///////////////////////////////////////////////////////////////////////////////////////////   
+/// Function removes the object which crashes into another object from the class BoatBig///
+///////////////////////////////////////////////////////////////////////////////////////////
     public void Colission() {
         Actor haven = getOneIntersectingObject(Havenfoot2.class);
         Actor boat = getOneIntersectingObject(BoatBig.class);
@@ -25,6 +29,9 @@ public void act()
                      
             } 
         }
+///////////////////////////////////////////////////////////////////////////////////////////   
+/// Function which make the movement happen and also rotates at he given X and Y///////////
+///////////////////////////////////////////////////////////////////////////////////////////
     public void movement() {
         move(-slow);
      if (getX() <=  300 && getY() == 61) {
@@ -38,7 +45,9 @@ public void act()
     
 }
 }
-
+///////////////////////////////////////////////////////////////////////////////////////////   
+//////////////Function to drag the boat from left to right to the dock/////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
 public void MouseMovement() {
   if (Greenfoot.mouseDragged(this) == true){
         MouseInfo mouse = Greenfoot.getMouseInfo();
@@ -46,13 +55,9 @@ public void MouseMovement() {
 
     }
 }
-/*public void CanSeeWall() {
-       Actor maindock = getOneIntersectingObject(Dock1.class);
-      if (maindock != null) {
-          setLocation(getX()+10, getY() + 10);
-          move(0);
-        }
-    }*/
+///////////////////////////////////////////////////////////////////////////////////////////   
+//////// Function which set var slow to 0 so the boat will between a certain X and Y///////
+///////////////////////////////////////////////////////////////////////////////////////////
 public void StopBoat() {
     if (getX() >= 102 && getX() <= 136 && getY() == 729) {
        slow = 0;

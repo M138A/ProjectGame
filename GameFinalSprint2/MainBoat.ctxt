@@ -9,5 +9,4 @@ comment3.params=
 comment3.target=void\ MouseMovement()
 comment4.params=
 comment4.target=void\ StopBoat()
-comment4.text=public\ void\ CanSeeWall()\ {\r\n\ \ \ \ \ \ \ Actor\ maindock\ \=\ getOneIntersectingObject(Dock1.class);\r\n\ \ \ \ \ \ if\ (maindock\ \!\=\ null)\ {\r\n\ \ \ \ \ \ \ \ \ \ setLocation(getX()+10,\ getY()\ +\ 10);\r\n\ \ \ \ \ \ \ \ \ \ move(0);\r\n\ \ \ \ \ \ \ \ }\r\n}
 numComments=5

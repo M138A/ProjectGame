@@ -46,9 +46,6 @@ public void act() {
         boatbig.setLocation(420, 61);
         dock1.setLocation(113, 774);
         dock1.setLocation(119, 749);
-        Dock1 dock12 = new Dock1();
-        addObject(dock12, 769, 757);
-        dock12.setLocation(765, 750);
         Dock1 dock13 = new Dock1();
         addObject(dock13, 545, 756);
         dock13.setLocation(539, 749);
@@ -61,5 +58,11 @@ public void act() {
         Havenfoot2 havenfoot2 = new Havenfoot2();
         addObject(havenfoot2, 618, 214);
         havenfoot2.setLocation(615, 154);
+        ExitSmall exitS = new ExitSmall();
+        addObject (exitS, 896,283);
+        ExitBig exitB = new ExitBig();
+        addObject (exitB, 896, 576);
+        ExitMedium exitM = new ExitMedium();
+        addObject (exitM, 896, 420);
     }
 }
