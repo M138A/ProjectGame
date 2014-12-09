@@ -14,8 +14,8 @@ public void act()
     movement(); 
     MouseMovement();
     StopBoat();
+    CargoCheck();
     Colission();
-   // CanSeeWall();
 
    }      
 }

@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * Write a description of class MainBoat here.
  * 
@@ -12,10 +12,22 @@ public class MainBoat extends Actor
     int fast = 8;
     int medium = 4;
     int slow  = 1; 
-public void act() 
-    {
-     
+///////////////////////////////////////////////////////////////////////////////////////////   
+/// Function return's the boolean true if the Actor MainBoat is in the certain X and Y/////
+///////////////////////////////////////////////////////////////////////////////////////////
+public void CargoCheck() 
+ {
+       if(!getWorld().getObjects(MainBoat.class).isEmpty()) {         
+           Actor boat = (Actor)getWorld().getObjects(MainBoat.class).get(0);
+           if (boat.getX()>=102 && boat.getX() <= 136 && boat.getY()==729){           
+               setLocation(getX() + 10, getY() +10);
+          }
+   
+      }
     }   
+
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////   
 /// Function removes the object which crashes into another object from the class BoatBig///
 ///////////////////////////////////////////////////////////////////////////////////////////

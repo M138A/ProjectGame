@@ -17,6 +17,7 @@ public class BoatSmall extends MainBoat
          movement(); 
          MouseMovement();
          StopBoat();
+         CargoCheck();
          Colission();
     }    
 }
