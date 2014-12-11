@@ -17,7 +17,7 @@ public class BoatMedium extends MainBoat
      movement(); 
      MouseMovement();
      StopBoat();
-     CargoCheck();
+
      Colission();
     }    
 }

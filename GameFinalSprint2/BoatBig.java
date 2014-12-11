@@ -14,7 +14,7 @@ public void act()
     movement(); 
     MouseMovement();
     StopBoat();
-    CargoCheck();
+    ExitBoat();
     Colission();
 
    }      
