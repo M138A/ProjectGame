@@ -17,6 +17,17 @@ public class MainBoat extends Actor
 /** 
  *  Function counts till 5, 7 or 9 depending on the Boat when hitting the Dock1.class and than executes the MoveToExit
 **/
+public void Initiate() {
+    movement(); 
+    MouseMovement();
+    StopBoat();
+    ExitBoat();
+    Colission();
+
+
+
+
+} 
 public void ExitBoat()    
  {  
       if (isTouching(Dock1.class)){
@@ -29,8 +40,8 @@ public void ExitBoat()
 
     }     
 public void MoveToExit() {
-      slow = -1;
-      
+      slow = 1;
+      setRotation(180);
 }
 /**  
  *  Function removes the object which crashes into another object from the class BoatBig
