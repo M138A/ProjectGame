@@ -19,7 +19,7 @@ public class Buttons extends Actor
             {  
                 if (object == this)  
                 {  
-                    // Replace the image of the hovered button with the generated image, which contains the description of the mini-game.
+                    // Replace the image of the hovered button with the generated image, which contains the description of any the mini-game.
                     setImage(DisplayDescription(HoverClass));
                     
                     if(Greenfoot.mouseClicked(null)){
