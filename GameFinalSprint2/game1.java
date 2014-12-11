@@ -125,5 +125,12 @@ public void act() {
         addObject (exitB, 896, 576);
         ExitMedium exitM = new ExitMedium();
         addObject (exitM, 896, 420);
+        ColissionDock colDock1 = new ColissionDock();
+        addObject(colDock1, 545, 800);
+        ColissionDock colDock2 = new ColissionDock();
+        addObject(colDock2, 343, 800);
+        ColissionDock colDock3 = new ColissionDock();
+        addObject(colDock3, 102, 800);
+        
     }
 }

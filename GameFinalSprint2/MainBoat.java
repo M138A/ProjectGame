@@ -15,19 +15,18 @@ public class MainBoat extends Actor
 ///////////////////////////////////////////////////////////////////////////////////////////   
 /// Function return's the boolean true if the Actor MainBoat is in the certain X and Y/////
 ///////////////////////////////////////////////////////////////////////////////////////////
+
 public void CargoCheck() 
  {
+     boolean cargo = true;
        if(!getWorld().getObjects(MainBoat.class).isEmpty()) {         
            Actor boat = (Actor)getWorld().getObjects(MainBoat.class).get(0);
            if (boat.getX()>=102 && boat.getX() <= 136 && boat.getY()==729){           
                setLocation(getX() + 10, getY() +10);
-          }
    
       }
-    }   
-
-
-
+    }  
+}
 ///////////////////////////////////////////////////////////////////////////////////////////   
 /// Function removes the object which crashes into another object from the class BoatBig///
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -70,7 +69,7 @@ public void MouseMovement() {
 //////// Function which set var slow to 0 so the boat will between a certain X and Y///////
 ///////////////////////////////////////////////////////////////////////////////////////////
 public void StopBoat() {
-    if (getX() >= 102 && getX() <= 136 && getY() == 729) {
+    /*if (getX() >= 102 && getX() <= 136 && getY() == 729) {
        slow = 0;
     }
     else if (getX() >= 305 && getX() <= 339 && getY() == 729){
@@ -81,7 +80,13 @@ public void StopBoat() {
     }
     else if (getX() >= 748 && getX() <= 782 && getY() == 729){
        slow = 0;
-    }
+    }*/
+    
+    Actor boats = getOneIntersectingObject(ColissionDock.class);
+        if (boats != null){
+            slow = 0;
+        }
     
 }
+
 }
