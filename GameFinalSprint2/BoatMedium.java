@@ -14,6 +14,11 @@ public class BoatMedium extends MainBoat
      */
     public void act() 
     {
-    Initiate();
+    movement(); 
+    MouseMovementLeftRight();
+    StopBoat();
+    ExitHarbor(300);
+    Colission();
+
     }    
 }

@@ -19,19 +19,15 @@ public class MainBoat extends Actor
 **/
 public void Initiate() {
     movement(); 
-    MouseMovement();
+    MouseMovementLeftRight();
     StopBoat();
-    ExitBoat();
     Colission();
-
-
-
-
 } 
-public void ExitBoat()    
+
+public void ExitHarbor(int k)    
  {  
       if (isTouching(Dock1.class)){
-          if (spawnCounter > 100) {  
+          if (spawnCounter > k) {  
           spawnCounter = 0;
           MoveToExit();
         }
@@ -39,10 +35,13 @@ public void ExitBoat()
         }
 
     }     
+    
 public void MoveToExit() {
       slow = 1;
-      setRotation(180);
+      setLocation(getX(), getY() - 100);
+      setRotation(180);    
 }
+        
 /**  
  *  Function removes the object which crashes into another object from the class BoatBig
 */
@@ -65,7 +64,7 @@ public void movement() {
     move(-slow);
      if (getX() <=  300 && getY() == 61) {
        for(int i = 0; i <= 90; i++) {
-          // Greenfoot.delay(1);
+          //Greenfoot.delay(1);
             setRotation(-i);
             setLocation(getX() - slow, getY());
         }
@@ -75,29 +74,22 @@ public void movement() {
 /**
  * Function to drag the boat from left to right to the dock
 */
-public void MouseMovement() {
+public void MouseMovementLeftRight() {
   if (Greenfoot.mouseDragged(this) == true){
         MouseInfo mouse = Greenfoot.getMouseInfo();
-        setLocation (mouse.getX(), getY());
-
+        setLocation(mouse.getX(), getY());
     }
 }
+
 /**
  * Function which set var slow to 0 so the boat will between a certain X and Y
 */
 public void StopBoat() {
-    if (getX() >= 102 && getX() <= 136 && getY() == 729) {
-       slow = 0;
-    }
-    else if (getX() >= 305 && getX() <= 339 && getY() == 729){
-       slow = 0;
-    }
-    else if (getX() >= 522 && getX() <= 556 && getY() == 729){
-       slow = 0;
-    }
-    else if (getX() >= 748 && getX() <= 782 && getY() == 729){
-       slow = 0;
-    }
+
+    Actor boats = getOneIntersectingObject(ColissionDock.class);
+        if (boats != null){
+            slow = 0;
+        }
     
 }
 }

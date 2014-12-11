@@ -14,6 +14,11 @@ public class BoatSmall extends MainBoat
      */
     public void act() 
     {
-         Initiate();
+    movement(); 
+    MouseMovementLeftRight();
+    StopBoat();
+    ExitHarbor(500);
+    Colission();
+
     }    
 }

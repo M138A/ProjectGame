@@ -11,7 +11,11 @@ public class BoatBig extends MainBoat
    
 public void act() 
     {
-   Initiate();
+   movement(); 
+   MouseMovementLeftRight();
+   StopBoat();
+   ExitHarbor(200);
+   Colission();
    }      
 }
 //Move's the boat forward and slows down when the boat is in the harbor
