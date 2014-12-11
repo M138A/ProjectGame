@@ -1,19 +1,19 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ ExitBoat()
-comment0.text=\ \r\n\ \ Function\ counts\ till\ 5,\ 7\ or\ 9\ depending\ on\ the\ Boat\ when\ hitting\ the\ Dock1.class\ and\ than\ executes\ the\ MoveToExit\r\n
+comment0.text=\ \n\ \ Function\ counts\ till\ 5,\ 7\ or\ 9\ depending\ on\ the\ Boat\ when\ hitting\ the\ Dock1.class\ and\ than\ executes\ the\ MoveToExit\n
 comment1.params=
 comment1.target=void\ MoveToExit()
 comment2.params=
 comment2.target=void\ Colission()
-comment2.text=\ \ \r\n\ \ Function\ removes\ the\ object\ which\ crashes\ into\ another\ object\ from\ the\ class\ BoatBig\r\n
+comment2.text=\ \ \n\ \ Function\ removes\ the\ object\ which\ crashes\ into\ another\ object\ from\ the\ class\ BoatBig\n
 comment3.params=
 comment3.target=void\ movement()
-comment3.text=\r\n\ Function\ which\ makes\ the\ movement\ happen\ and\ also\ rotates\ at\ the\ given\ X\ and\ Y\r\n
+comment3.text=\n\ Function\ which\ makes\ the\ movement\ happen\ and\ also\ rotates\ at\ the\ given\ X\ and\ Y\n
 comment4.params=
 comment4.target=void\ MouseMovement()
-comment4.text=\r\n\ Function\ to\ drag\ the\ boat\ from\ left\ to\ right\ to\ the\ dock\r\n
+comment4.text=\n\ Function\ to\ drag\ the\ boat\ from\ left\ to\ right\ to\ the\ dock\n
 comment5.params=
 comment5.target=void\ StopBoat()
-comment5.text=\r\n\ Function\ which\ set\ var\ slow\ to\ 0\ so\ the\ boat\ will\ between\ a\ certain\ X\ and\ Y\r\n
+comment5.text=\n\ Function\ which\ set\ var\ slow\ to\ 0\ so\ the\ boat\ will\ between\ a\ certain\ X\ and\ Y\n
 numComments=6
