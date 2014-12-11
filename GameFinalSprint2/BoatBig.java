@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+    import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class BoatBig here.
@@ -14,7 +14,7 @@ public void act()
     movement(); 
     MouseMovement();
     StopBoat();
-    CargoCheck();
+    ExitBoat();
     Colission();
 
    }      

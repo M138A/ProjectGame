@@ -12,29 +12,29 @@ public class MainBoat extends Actor
     int fast = 8;
     int medium = 4;
     int slow  = 1; 
-///////////////////////////////////////////////////////////////////////////////////////////   
-/// Function return's the boolean true if the Actor MainBoat is in the certain X and Y/////
-///////////////////////////////////////////////////////////////////////////////////////////
-public void CargoCheck() 
- {
-       if(!getWorld().getObjects(MainBoat.class).isEmpty()) {         
-           Actor boat = (Actor)getWorld().getObjects(MainBoat.class).get(0);
-           if (boat.getX()>=102 && boat.getX() <= 136 && boat.getY()==729){           
-               setLocation(getX() + 10, getY() +10);
-          }
-   
-      }
-    }   
+    int spawnCounter = 0;  
+    int Score = 0;
+/** 
+ *  Function counts till 5, 7 or 9 depending on the Boat when hitting the Dock1.class and than executes the MoveToExit
+**/
+public void ExitBoat()    
+ {  
+      if (isTouching(Dock1.class)){
+          if (spawnCounter > 100) {  
+          spawnCounter = 0;
+          MoveToExit();
+        }
+        spawnCounter++;
+        }
 
-
-public void MoveToExit(){
-    
-
-
+    }     
+public void MoveToExit() {
+      slow = -1;
+      
 }
-///////////////////////////////////////////////////////////////////////////////////////////   
-/// Function removes the object which crashes into another object from the class BoatBig///
-///////////////////////////////////////////////////////////////////////////////////////////
+/**  
+ *  Function removes the object which crashes into another object from the class BoatBig
+*/
     public void Colission() {
         Actor haven = getOneIntersectingObject(Havenfoot2.class);
         Actor boat = getOneIntersectingObject(MainBoat.class);
@@ -46,9 +46,10 @@ public void MoveToExit(){
                      
             } 
         }
-///////////////////////////////////////////////////////////////////////////////////////////   
-/// Function which makes the movement happen and also rotates at the given X and Y///////////
-///////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Function which makes the movement happen and also rotates at the given X and Y
+*/
+
 public void movement() {
     move(-slow);
      if (getX() <=  300 && getY() == 61) {
@@ -60,9 +61,9 @@ public void movement() {
     
 }
 }
-///////////////////////////////////////////////////////////////////////////////////////////   
-//////////////Function to drag the boat from left to right to the dock/////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Function to drag the boat from left to right to the dock
+*/
 public void MouseMovement() {
   if (Greenfoot.mouseDragged(this) == true){
         MouseInfo mouse = Greenfoot.getMouseInfo();
@@ -70,9 +71,9 @@ public void MouseMovement() {
 
     }
 }
-///////////////////////////////////////////////////////////////////////////////////////////   
-//////// Function which set var slow to 0 so the boat will between a certain X and Y///////
-///////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Function which set var slow to 0 so the boat will between a certain X and Y
+*/
 public void StopBoat() {
     if (getX() >= 102 && getX() <= 136 && getY() == 729) {
        slow = 0;
