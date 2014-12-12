@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class MainBoat extends Actor
 { 
+    int life = 3;
     //Movement variable of the boat
     int fast = 8;
     int medium = 4;
@@ -24,7 +25,13 @@ public class MainBoat extends Actor
         StopBoat();
         Colission();
     } 
-
+    public void ShowLife()
+    {
+        World world;
+        world = getWorld();
+        world.addObject(new LifeBar(), getWorld().getWidth() / 2, 10);
+        
+    }
     public void ExitHarbor(int k)    
     {  
         if (isTouching(Dock1.class)){
@@ -54,7 +61,8 @@ public class MainBoat extends Actor
             World world;
             world = getWorld();
             world.removeObject(this);
-
+            life = life - 1;
+            System.out.println(life);
         } 
     }
 
