@@ -16,15 +16,40 @@ public class MainBoat extends Actor
     int spawnCounter = 0;  
     int Score = 0;
     boolean leeg = false;
+    int loadingTime;
+    int size;
+   
+    public MainBoat(int newSize) {
+        size = newSize;
+        
+        setImage();
+        }
+    public void setImage() {
+        if (size == 10) {
+                setImage(new GreenfootImage("Boatsmall.png"));
+            }
+        else if (size == 20){
+                setImage(new GreenfootImage("Boatmedium.png"));
+            }                
+        else if (size == 30) {
+            setImage(new GreenfootImage("Boatbig.png"));            
+        } 
+    }
+    
+    
+
     /** 
      *  Function counts till 5, 7 or 9 depending on the Boat when hitting the Dock1.class and than executes the MoveToExit
      **/
-    public void Initiate() {
-        movement(); 
-        MouseMovementLeftRight();
-        StopBoat();
-        Colission();
-    } 
+
+    public void act() 
+        {
+       movement(); 
+       MouseMovement();
+       StopBoat();
+       ExitHarbor(200);
+       Colission();
+       }    
     public void ShowLife()
     {
         World world;
@@ -32,9 +57,10 @@ public class MainBoat extends Actor
         world.addObject(new LifeBar(), getWorld().getWidth() / 2, 10);
         
     }
+
     public void ExitHarbor(int k)    
     {  
-        if (isTouching(Dock1.class)){
+        if (isTouching(ColissionDock.class)){
             if (spawnCounter > k) {  
                 spawnCounter = 0;
                 MoveToExit();
@@ -55,7 +81,7 @@ public class MainBoat extends Actor
      *  Function removes the object which crashes into another object from the class BoatBig
      */
     public void Colission() {
-        Actor haven = getOneIntersectingObject(Havenfoot2.class);
+        Actor haven = getOneIntersectingObject(Havenfoot.class);
         Actor boat = getOneIntersectingObject(MainBoat.class);
         if (haven != null || boat != null) {
             World world;
@@ -85,7 +111,7 @@ public class MainBoat extends Actor
     /**
      * Function to drag the boat from left to right to the dock
      */
-    public void MouseMovementLeftRight() {
+    public void MouseMovement() {
         if (Greenfoot.mouseDragged(this) == true){
             MouseInfo mouse = Greenfoot.getMouseInfo();
             if (leeg){

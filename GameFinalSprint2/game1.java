@@ -31,13 +31,13 @@ public void act() {
         double spawnRandom = Math.random();
         if (spawnRandom <= 0.33)
         {
-            addObject(new BoatBig(),800,61);
+            addObject(new MainBoat(10),800,61);
         } else if (spawnRandom >= 0.33 && spawnRandom <= 0.66)
         {
-            addObject(new BoatMedium(), 800, 61);
+            addObject(new MainBoat(20), 800, 61);
         } else 
         {
-            addObject(new BoatSmall(), 800, 61);
+            addObject(new MainBoat(30), 800, 61);
         }
         spawnRandom = 0;
     }  
@@ -50,13 +50,13 @@ public void act() {
         double spawnRandom = Math.random();
         if (spawnRandom <= 0.33)
         {
-            addObject(new BoatBig(),800,61);
+            addObject(new MainBoat(10),800,61);
         } else if (spawnRandom >= 0.33 && spawnRandom <= 0.66)
         {
-            addObject(new BoatMedium(), 800, 61);
+            addObject(new MainBoat(20), 800, 61);
         } else 
         {
-            addObject(new BoatSmall(), 800, 61);
+            addObject(new MainBoat(30), 800, 61);
         }
         spawnRandom = 0;
     }  
@@ -69,13 +69,13 @@ public void act() {
         double spawnRandom = Math.random();
         if (spawnRandom <= 0.33)
         {
-            addObject(new BoatBig(),800,61);
+            addObject(new MainBoat(10),800,61);
         } else if (spawnRandom >= 0.33 && spawnRandom <= 0.66)
         {
-            addObject(new BoatMedium(), 800, 61);
+            addObject(new MainBoat(20), 800, 61);
         } else 
         {
-            addObject(new BoatSmall(), 800, 61);
+            addObject(new MainBoat(30), 800, 61);
         }
         spawnRandom = 0;
     }  
@@ -96,41 +96,25 @@ public void act() {
     private void prepare()
     {
 
-        Haven haven = new Haven();
-        addObject(haven, 455, 865);
-        Dock1 dock1 = new Dock1();
-        addObject(dock1, 102, 786);
-        haven.setLocation(450, 864);
-        BoatBig boatbig = new BoatBig();
-        addObject(boatbig, 300, 57);
-        boatbig.setLocation(809, 61);
-        boatbig.setLocation(420, 61);
-        dock1.setLocation(113, 774);
-        dock1.setLocation(119, 749);
-        Dock1 dock13 = new Dock1();
-        addObject(dock13, 545, 756);
-        dock13.setLocation(539, 749);
-        Dock1 dock14 = new Dock1();
-        addObject(dock14, 343, 753);
-        dock14.setLocation(322, 750);
-        BoatBig boatbig2 = new BoatBig();
-        addObject (boatbig2,600, 61);
-        removeObject(boatbig);
-        Havenfoot2 havenfoot2 = new Havenfoot2();
-        addObject(havenfoot2, 618, 214);
-        havenfoot2.setLocation(615, 154);
-        ExitSmall exitS = new ExitSmall();
-        addObject (exitS, 896,283);
-        ExitBig exitB = new ExitBig();
-        addObject (exitB, 896, 576);
-        ExitMedium exitM = new ExitMedium();
-        addObject (exitM, 896, 420);
+        Dock dock1 = new Dock();
+        addObject(dock1, 335, 825);
+        Dock dock2 = new Dock();
+        addObject(dock2, 127, 825);
+        Dock dock3 = new Dock();
+        addObject(dock3, 542, 825);
+        Havenfoot havencolission = new Havenfoot("havencolission");
+        addObject(havencolission, 228, 825);
+        Havenfoot havencolission2 = new Havenfoot("havencolission");
+        addObject(havencolission2,  22, 825);
+        Havenfoot havencolission3 = new Havenfoot("havencolission");
+        addObject(havencolission3, 436, 825 );
+        Havenfoot havenfooter = new Havenfoot("havenfooter");
+        addObject(havenfooter, 771, 827);
         ColissionDock colDock1 = new ColissionDock();
-        addObject(colDock1, 545, 800);
+        addObject(colDock1, 539, 881);
         ColissionDock colDock2 = new ColissionDock();
-        addObject(colDock2, 343, 800);
+        addObject(colDock2, 329, 881);
         ColissionDock colDock3 = new ColissionDock();
-        addObject(colDock3, 102, 800);
-        
+        addObject(colDock3, 126, 881);
     }
 }
