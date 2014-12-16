@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment1.params=newSize\ i
+comment1.target=Boat(int,\ int)
+comment2.params=i
+comment2.target=void\ setImage(int)
+comment3.params=
+comment3.target=void\ MoveBoat()
+comment4.params=
+comment4.target=void\ MoveMouse()
+comment5.params=
+comment5.target=void\ Colission()
+comment6.params=k
+comment6.target=void\ ExitHarbor(int)
+comment7.params=
+comment7.target=void\ GoToExit()
+comment8.params=
+comment8.target=void\ Dock()
+numComments=9
