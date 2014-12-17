@@ -19,13 +19,14 @@ public class Boat extends Actor
     private Score score;
 
     public void act() {
-         MoveBoat();
-         MoveMouse();
-         ExitHarbor(time);
-         Dock();
-         Colission();
-         Exit(exit);
+        MoveBoat();
+        MoveMouse();
+        ExitHarbor(time);
+        Dock();
+        Colission();
+        Exit(exit);
     }
+
     public Boat(int newSize, int i, int t, Exit out) {
         size = newSize;
         id = i;
@@ -42,7 +43,7 @@ public class Boat extends Actor
             setImage(new GreenfootImage("Boatleeg"+i+".png"));
         }
     }
-    
+
     public void MoveBoat() {
         move(-slow);
         if (getX() <=  300 && getY() == 61) {
@@ -54,7 +55,7 @@ public class Boat extends Actor
         }
     }
 
-   public void MoveMouse() {
+    public void MoveMouse() {
         if (Greenfoot.mouseDragged(this) == true){
             MouseInfo mouse = Greenfoot.getMouseInfo();
 
@@ -66,7 +67,8 @@ public class Boat extends Actor
             }
         }
     }
-        public void Colission() {
+
+    public void Colission() {
         Actor haven = getOneIntersectingObject(Haven.class);
         Actor boat = getOneIntersectingObject(Boat.class);
         if (haven != null || boat != null) {
@@ -75,6 +77,7 @@ public class Boat extends Actor
             world.removeObject(this);
         } 
     }
+
     public void ExitHarbor(int k)    
     {  
         if (isTouching(ColissionDock.class)){
@@ -88,14 +91,19 @@ public class Boat extends Actor
         }
 
     }  
+
     public void Exit(Exit out) {
         World world;
         world = getWorld();
-   if (intersects(out)){
-        scoreUp();
-        world.removeObject(this);
+        if (intersects(out)){
+            scoreUp();
+            world.removeObject(this);
+        }
+        else if(isTouching(Exit.class)) {
+            world.removeObject(this);
+        }
     }
-}
+
     public void GoToExit() {
         slow = 1;
         setLocation(getX(), getY() - 100);
@@ -109,10 +117,11 @@ public class Boat extends Actor
         }
 
     }
+
     public void scoreUp()
     {
-            Game1 game1World = (Game1) getWorld();  // get a reference to the world
-            Score score = game1World.getScore();  // get a reference to the counter
-            score.addScore(size);
+        Game1 game1World = (Game1) getWorld();  // get a reference to the world
+        Score score = game1World.getScore();  // get a reference to the counter
+        score.addScore(size);
     }
 }
