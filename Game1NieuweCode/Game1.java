@@ -8,11 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Game1 extends World
 {
-
-    /**
-     * Constructor for objects of class Game1.
-     * 
-     */
+    private Score score;
+    
+    public Score getScore() {
+        return score;
+    }
+    
     public Game1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -33,11 +34,11 @@ public class Game1 extends World
         addObject(dock2, 127, 825);
         Dock dock3 = new Dock();
         addObject(dock3, 542, 825);
-        Boat boat1 = new Boat(10,1,700,exit1);
+        Boat boat1 = new Boat(30,1,700,exit1);
         addObject(boat1, 500,61);
         Boat boat2 = new Boat(20,2,500,exit2);
         addObject(boat2, 800,61);
-        Boat boat3 = new Boat(30,3,300,exit3);
+        Boat boat3 = new Boat(10,3,300,exit3);
         addObject(boat3, 650,61);
         Haven havencolission = new Haven("havencolission");
         addObject(havencolission, 228, 825);
@@ -67,5 +68,7 @@ public class Game1 extends World
         addObject(rightbalk6, 885, 200);
         Haven havenbreak = new Haven("havenbreak");
         addObject (havenbreak,612, 145);
+        score = new Score();
+        addObject(score, 840, 790);
     }
 }

@@ -16,6 +16,7 @@ public class Boat extends Actor
     private int id;
     private int time;
     private Exit exit;
+    private Score score;
 
     public void act() {
          MoveBoat();
@@ -23,8 +24,7 @@ public class Boat extends Actor
          ExitHarbor(time);
          Dock();
          Colission();
-         Exit(id,exit);
-         
+         Exit(exit);
     }
     public Boat(int newSize, int i, int t, Exit out) {
         size = newSize;
@@ -88,10 +88,11 @@ public class Boat extends Actor
         }
 
     }  
-    public void Exit(int j, Exit out) {
-   if (intersects(out)){
+    public void Exit(Exit out) {
         World world;
         world = getWorld();
+   if (intersects(out)){
+        scoreUp();
         world.removeObject(this);
     }
 }
@@ -108,7 +109,10 @@ public class Boat extends Actor
         }
 
     }
-       public int getId() {
-       return id;
+    public void scoreUp()
+    {
+            Game1 game1World = (Game1) getWorld();  // get a reference to the world
+            Score score = game1World.getScore();  // get a reference to the counter
+            score.addScore(size);
     }
 }
