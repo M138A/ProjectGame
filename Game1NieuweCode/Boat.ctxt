@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment1.params=newSize\ i
-comment1.target=Boat(int,\ int)
+comment1.params=newSize\ i\ t
+comment1.target=Boat(int,\ int,\ int)
 comment2.params=i
 comment2.target=void\ setImage(int)
 comment3.params=

@@ -15,19 +15,21 @@ public class Boat extends Actor
     private boolean boatEmpty = false;
     private int spawnCounter = 0;  
     private int id;
+    private int time;
 
     public void act() {
          MoveBoat();
          MoveMouse();
-         ExitHarbor(200);
+         ExitHarbor(time);
          Dock();
          Colission();
          
          
     }
-    public Boat(int newSize, int i) {
+    public Boat(int newSize, int i, int t) {
         size = newSize;
         id = i;
+        time = t;
         setImage(id);
     }
 
