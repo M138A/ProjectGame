@@ -33,12 +33,12 @@ public class Game1 extends World
         addObject(dock2, 127, 825);
         Dock dock3 = new Dock();
         addObject(dock3, 542, 825);
-        Boat boat1 = new Boat(10,1,700);
-        addObject(boat1, 800,61);
-        Boat boat2 = new Boat(20,2,500);
+        Boat boat1 = new Boat(10,1,700,exit1);
+        addObject(boat1, 500,61);
+        Boat boat2 = new Boat(20,2,500,exit2);
         addObject(boat2, 800,61);
-        Boat boat3 = new Boat(30,3,300);
-        addObject(boat3, 800,61);
+        Boat boat3 = new Boat(30,3,300,exit3);
+        addObject(boat3, 650,61);
         Haven havencolission = new Haven("havencolission");
         addObject(havencolission, 228, 825);
         Haven havencolission2 = new Haven("havencolission");

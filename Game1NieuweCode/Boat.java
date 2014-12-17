@@ -12,10 +12,10 @@ public class Boat extends Actor
     private int speed;
     private int slow = 1;
     private boolean leeg = false;
-    private boolean boatEmpty = false;
     private int spawnCounter = 0;  
     private int id;
     private int time;
+    private Exit exit;
 
     public void act() {
          MoveBoat();
@@ -23,16 +23,17 @@ public class Boat extends Actor
          ExitHarbor(time);
          Dock();
          Colission();
-         
+         Exit(id,exit);
          
     }
-    public Boat(int newSize, int i, int t) {
+    public Boat(int newSize, int i, int t, Exit out) {
         size = newSize;
         id = i;
+        exit = out;
         time = t;
         setImage(id);
     }
-
+    //boat gemaakt met size 10 id 1 en time 700
     public void setImage(int i) {
         if (!leeg) {
             setImage(new GreenfootImage("Boat"+i+".png"));
@@ -53,7 +54,7 @@ public class Boat extends Actor
         }
     }
 
-    public void MoveMouse() {
+   public void MoveMouse() {
         if (Greenfoot.mouseDragged(this) == true){
             MouseInfo mouse = Greenfoot.getMouseInfo();
 
@@ -87,6 +88,13 @@ public class Boat extends Actor
         }
 
     }  
+    public void Exit(int j, Exit out) {
+   if (intersects(out)){
+        World world;
+        world = getWorld();
+        world.removeObject(this);
+    }
+}
     public void GoToExit() {
         slow = 1;
         setLocation(getX(), getY() - 100);
@@ -99,5 +107,8 @@ public class Boat extends Actor
             slow = 0;
         }
 
+    }
+       public int getId() {
+       return id;
     }
 }
