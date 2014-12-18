@@ -20,8 +20,8 @@ public class Game1 extends World
         super(900, 900, 1); 
         prepare();
     }
-    private int spawnCounter = 0;  
-    private int spawnRateCounter = 0;  /*
+   private int spawnCounter = 0;  
+    private int spawnRateCounter = 0;  
     public void act() {     
         spawnRateCounter++;
         if( spawnRateCounter <= 700)
@@ -44,13 +44,13 @@ public class Game1 extends World
             double spawnRandom = Math.random();
             if (spawnRandom <= 0.33)
             {
-                addObject(new Boat(30,1,700,exit1), 800, 61);
+                addObject(new Boat(30,1,700,new Exit("paars")), 800, 61);
             } else if (spawnRandom >= 0.33 && spawnRandom <= 0.66)
             {
-                addObject(new Boat(20,2,500,exit2), 800, 61);
+                addObject(new Boat(20,2,500,new Exit("groen")), 800, 61);
             } else 
             {
-                addObject(new Boat(10,3,300,exit3), 800, 61);
+                addObject(new Boat(10,3,300,new Exit("geel")), 800, 61);
             }
             spawnRandom = 0;
         }  
@@ -64,13 +64,13 @@ public class Game1 extends World
             double spawnRandom = Math.random();
             if (spawnRandom <= 0.33)
             {
-                addObject(new Boat(30,1,700,exit1),800,61);
+                addObject(new Boat(30,1,700,new Exit("paars")),800,61);
             } else if (spawnRandom >= 0.33 && spawnRandom <= 0.66)
             {
-                addObject(new Boat(20,2,500,exit2), 800, 61);
+                addObject(new Boat(20,2,500,new Exit("groen")), 800, 61);
             } else 
             {
-                addObject(new Boat(10,3,300,exit3), 800, 61);
+                addObject(new Boat(10,3,300,new Exit("geel")), 800, 61);
             }
             spawnRandom = 0;
         }  
@@ -84,19 +84,18 @@ public class Game1 extends World
             double spawnRandom = Math.random();
             if (spawnRandom <= 0.33)
             {
-                addObject(new BoatBig(),800,61);
+                addObject(new Boat(30,1,700,new Exit("paars")),800,61);
             } else if (spawnRandom >= 0.33 && spawnRandom <= 0.66)
             {
-                addObject(new Boat(20,2,500,exit2), 800, 61);
+                addObject(new Boat(20,2,500,new Exit("groen")), 800, 61);
             } else 
             {
-                addObject(new Boat(10,3,300,exit3), 800, 61);
+                addObject(new Boat(10,3,300,new Exit("geel")), 800, 61);
             }
             spawnRandom = 0;
         }  
         spawnCounter++;  
     }
-*/
     public void prepare()
     {
         Exit exit1 = new Exit("paars");
