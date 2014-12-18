@@ -23,8 +23,11 @@ public class Boat extends Actor
         MoveMouse();
         ExitHarbor(time);
         Dock();
-        Colission();
-        Exit(exit);
+
+        if(!Colission()){
+            Exit(exit);
+        }
+
     }
 
     public Boat(int newSize, int i, int t, Exit out) {
@@ -68,14 +71,18 @@ public class Boat extends Actor
         }
     }
 
-    public void Colission() {
+    public boolean Colission() {
         Actor haven = getOneIntersectingObject(Haven.class);
         Actor boat = getOneIntersectingObject(Boat.class);
         if (haven != null || boat != null) {
             World world;
             world = getWorld();
             world.removeObject(this);
+            return true;
         } 
+        else{
+            return false;
+        }
     }
 
     public void ExitHarbor(int k)    
@@ -99,7 +106,7 @@ public class Boat extends Actor
             scoreUp();
             world.removeObject(this);
         }
-        else if(isTouching(Exit.class)) {
+        else if (isTouching(Exit.class)){
             world.removeObject(this);
         }
     }
@@ -123,5 +130,20 @@ public class Boat extends Actor
         Game1 game1World = (Game1) getWorld();  // get a reference to the world
         Score score = game1World.getScore();  // get a reference to the counter
         score.addScore(size);
+    }
+
+    private boolean atEdgeOfWorld()
+    {
+        if(getY() > 400){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    private void removeStupidBoat()
+    {
+        getWorld().removeObject(this);
     }
 }

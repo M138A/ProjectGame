@@ -21,7 +21,7 @@ public class Game1 extends World
         prepare();
     }
     private int spawnCounter = 0;  
-    private int spawnRateCounter = 0;  
+    private int spawnRateCounter = 0;  /*
     public void act() {     
         spawnRateCounter++;
         if( spawnRateCounter <= 700)
@@ -96,7 +96,7 @@ public class Game1 extends World
         }  
         spawnCounter++;  
     }
-
+*/
     public void prepare()
     {
         Exit exit1 = new Exit("paars");
