@@ -29,7 +29,12 @@ public class Boat extends Actor
         }
 
     }
-
+    private void crashedBoat()
+    {
+        Game1 game1world = (Game1) getWorld();
+        Counter counter = game1world.getCounter();
+        counter.bumpCount(1);
+    }
     public Boat(int newSize, int i, int t, Exit out) {
         size = newSize;
         id = i;
@@ -77,6 +82,7 @@ public class Boat extends Actor
         if (haven != null || boat != null) {
             World world;
             world = getWorld();
+            crashedBoat();
             world.removeObject(this);
             return true;
         } 
@@ -145,5 +151,8 @@ public class Boat extends Actor
     private void removeStupidBoat()
     {
         getWorld().removeObject(this);
+
     }
+
+
 }

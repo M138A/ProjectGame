@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Game1 extends World
 {
     private Score score;
-
+    private Counter theCounter;
     public Score getScore() {
         return score;
     }
@@ -18,7 +18,12 @@ public class Game1 extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 900, 1); 
+        
         prepare();
+    }
+    public Counter getCounter()
+    {
+        return theCounter;
     }
    private int spawnCounter = 0;  
     private int spawnRateCounter = 0;  
@@ -146,5 +151,7 @@ public class Game1 extends World
         addObject (havenbreak,612, 145);
         score = new Score();
         addObject(score, 840, 790);
+        theCounter = new Counter();
+        addObject(theCounter, 840, 820);
     }
 }
