@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Dec 18 20:15:33 CET 2014
+#Thu Dec 18 22:50:42 CET 2014
 target2.width=80
 target5.naviview.expanded=true
 dependency12.type=UsesDependency
@@ -145,8 +145,8 @@ target1.editor.x=40
 target5.width=80
 dependency4.to=Haven
 target4.editor.width=960
-target4.name=Game1
 class.ColissionDock.image=Invisbledock.png
+target4.name=Game1
 target4.height=50
 class.Game1.superclass=greenfoot.World
 target1.width=110
