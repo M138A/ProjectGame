@@ -155,6 +155,6 @@ public class Game1 extends World
         score = new Score();
         addObject(score, 840, 790);
         theCounter = new Counter();
-        addObject(theCounter, 840, 820);
+        addObject(theCounter, 830, 820);
     }
 }
