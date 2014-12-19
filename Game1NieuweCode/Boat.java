@@ -17,15 +17,15 @@ public class Boat extends Actor
     private int time;
     private Exit exit;
     private Score score;
-    private boolean bootje = false;
 
     public void act() {
         MoveBoat();
         MoveMouse();
         ExitHarbor(time);
         Dock();
-        Exit(exit);
-        Colission();
+        if(!Colission()){
+            Exit(exit);
+        }
     }
     private void crashedBoat()
     {
@@ -74,7 +74,7 @@ public class Boat extends Actor
         }
     }
 
-    public void Colission() {
+    public boolean Colission() {
         Actor haven = getOneIntersectingObject(Haven.class);
         Actor boat = getOneIntersectingObject(Boat.class);
 
@@ -83,7 +83,11 @@ public class Boat extends Actor
             world = getWorld();
             crashedBoat();
             world.removeObject(this);
+            return true;
         } 
+        else {
+            return false;
+        }
     
 }
 
@@ -104,7 +108,6 @@ public class Boat extends Actor
     public void Exit(Exit out) {
         World world;
         world = getWorld();
-    if(getWorld() == null) {
         if (intersects(out)){
             scoreUp();
             world.removeObject(this);
@@ -112,7 +115,7 @@ public class Boat extends Actor
         else if (isTouching(Exit.class)){
             world.removeObject(this);
         }
-    }
+   
 }
 
     public void GoToExit() {
