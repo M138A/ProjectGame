@@ -15,15 +15,15 @@ public class Counter extends Actor
     private int totalCount = 3;
     public void Counter() 
     {
-        setImage(new GreenfootImage("Lives : 3", 20, Color.WHITE, Color.BLACK));
+        setImage(new GreenfootImage("Life : 0", 20, Color.WHITE, Color.BLACK));
     }    
     public void bumpCount(int amount)
     {
         totalCount -= amount;
-        if (totalCount == 0)
+        if (totalCount <= 0)
         {
             Greenfoot.stop();
         }
-        setImage(new GreenfootImage("Lives left: " + totalCount, 20, Color.WHITE, Color.BLACK));
+        setImage(new GreenfootImage("" + totalCount, 20, Color.WHITE, Color.BLACK));
     }
 }

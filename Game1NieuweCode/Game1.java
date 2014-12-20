@@ -8,11 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Game1 extends World
 {
+    private Exit exit1 = new Exit("paars");
+    private  Exit exit2 = new Exit("groen");
+    private     Exit exit3 = new Exit("geel");
     private Score score;
     private Counter theCounter;
-    private Exit exit1 = new Exit("paars");
-    private Exit exit2 = new Exit("groen");
-    private Exit exit3 = new Exit("geel");
     public Score getScore() {
         return score;
     }
@@ -21,44 +21,48 @@ public class Game1 extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 900, 1); 
-        
+
         prepare();
     }
+
     public Counter getCounter()
     {
         return theCounter;
     }
-   private int spawnCounter = 0;  
+    private int spawnCounter = 0;  
     private int spawnRateCounter = 0;  
     public void act() {     
         spawnRateCounter++;
         if( spawnRateCounter <= 700)
         {
-            spawnRateSlow();
-        } else if (spawnRateCounter >= 700 && spawnRateCounter <= 1400)
+        spawnRateSlow();
+        } if (spawnRateCounter >= 700 && spawnRateCounter <= 1400)
         {
             spawnRateMedium();
-        } else 
+        }else 
         {
-            spawnRateFast();
+        spawnRateFast();
         }
 
     }
 
     public void spawnRateSlow()
     {
-        if (spawnCounter > 500) {  
+        if (spawnCounter > 600) {  
             spawnCounter = 0;
             double spawnRandom = Math.random();
             if (spawnRandom <= 0.33)
             {
-                addObject(new Boat(30,1,700,exit1), 800, 61);
+                Boat b1 = new Boat(30,1,700,exit1);
+                addObject(b1,800,61);
             } else if (spawnRandom >= 0.33 && spawnRandom <= 0.66)
             {
-                addObject(new Boat(20,2,500,exit2), 800, 61);
+                Boat b2 = new Boat(20,2,500,exit2);
+                addObject(b2, 800, 61);
             } else 
             {
-                addObject(new Boat(10,3,300,exit3), 800, 61);
+                Boat b3 = new Boat(10,3,300,exit3);
+                addObject(b3, 800, 61);
             }
             spawnRandom = 0;
         }  
@@ -67,18 +71,21 @@ public class Game1 extends World
 
     public void spawnRateMedium()
     {
-        if (spawnCounter > 300) {  
+        if (spawnCounter > 600) {  
             spawnCounter = 0;
             double spawnRandom = Math.random();
             if (spawnRandom <= 0.33)
             {
-                addObject(new Boat(30,1,700,exit1),800,61);
+                Boat b1 = new Boat(30,1,700,exit1);
+                addObject(b1,800,61);
             } else if (spawnRandom >= 0.33 && spawnRandom <= 0.66)
             {
-                addObject(new Boat(20,2,500,exit2), 800, 61);
+                Boat b2 = new Boat(20,2,500,exit2);
+                addObject(b2, 800, 61);
             } else 
             {
-                addObject(new Boat(10,3,300,exit3), 800, 61);
+                Boat b3 = new Boat(10,3,300,exit3);
+                addObject(b3, 800, 61);
             }
             spawnRandom = 0;
         }  
@@ -87,30 +94,34 @@ public class Game1 extends World
 
     public void spawnRateFast()
     {
-        if (spawnCounter > 200) {  
+        if (spawnCounter > 600) {  
             spawnCounter = 0;
             double spawnRandom = Math.random();
             if (spawnRandom <= 0.33)
             {
-                addObject(new Boat(30,1,700,exit1),800,61);
+                Boat b1 = new Boat(30,1,700,exit1);
+                addObject(b1,800,61);
             } else if (spawnRandom >= 0.33 && spawnRandom <= 0.66)
             {
-                addObject(new Boat(20,2,500,exit2), 800, 61);
+                Boat b2 = new Boat(20,2,500,exit2);
+                addObject(b2, 800, 61);
             } else 
             {
-                addObject(new Boat(10,3,300,exit3), 800, 61);
+                Boat b3 = new Boat(10,3,300,exit3);
+                addObject(b3, 800, 61);
             }
             spawnRandom = 0;
         }  
         spawnCounter++;  
     }
+
     public void prepare()
     {
-        Exit exit1 = new Exit("paars");
+        // Exit exit1 = new Exit("paars");
         addObject(exit1, 885, 615);
-        Exit exit2 = new Exit("groen");
+        //   Exit exit2 = new Exit("groen");
         addObject(exit2, 885, 472);
-        Exit exit3 = new Exit("geel");
+        //  Exit exit3 = new Exit("geel");
         addObject(exit3, 885, 340);
         Dock dock1 = new Dock();
         addObject(dock1, 335, 825);
@@ -155,6 +166,6 @@ public class Game1 extends World
         score = new Score();
         addObject(score, 840, 790);
         theCounter = new Counter();
-        addObject(theCounter, 830, 820);
+        addObject(theCounter, 840, 820);
     }
 }
