@@ -19,7 +19,7 @@ public class Counter extends Actor
         if (gameIsDone == true){
             World world =  getWorld();
             world.addObject (new GameOver("Lost.png"),900/2,900/2);
-            world.addObject (new BackButton(),450,667);
+            world.addObject (new BackButton("lose"),450,667);
             gameIsDone = false;
         }
     }

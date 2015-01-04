@@ -13,12 +13,22 @@ public class BackButton extends Actor
      * Act - do whatever the BackButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-
+    public BackButton(String j){
+        game = j;
+    
+    }
     public void act() 
-    {
-            if (Greenfoot.mouseClicked(this)){
+    {   
+        if(game == "lose") {
+        if (Greenfoot.mouseClicked(this)){
          Greenfoot.setWorld(new InstructionsGame1());     
         }
-      }
+        }
+    else if (game == "win") {
+        if (Greenfoot.mouseClicked(this)){
+         Greenfoot.setWorld(new Havenmenu());     
+        }
+    }
+    }
   }    
 

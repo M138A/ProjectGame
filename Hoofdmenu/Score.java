@@ -23,14 +23,14 @@ public class Score extends Actor
             if (gameIsDone == true){
                  World world =  getWorld();
                  world.addObject (new GameOver("Won.png"),900/2,900/2);
-                 world.addObject (new BackButton(),450,667);
+                 world.addObject (new BackButton("win"),450,667);
                  gameIsDone = false;
             }
     }
     public void addScore(int points) {
         score += points;
         setImage(new GreenfootImage("Score : " + score, 24, Color.WHITE, Color.BLACK));
-        if (score >= 100)
+        if (score >= 120)
         {
             gameIsDone = true;
         }
