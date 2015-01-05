@@ -86,6 +86,7 @@ public class Boat extends Actor
             world = getWorld();
             crashedBoat();
             world.removeObject(this);
+            Greenfoot.playSound("Explosion.mp3");
             return true;
         } 
         else{
@@ -113,11 +114,13 @@ public class Boat extends Actor
         world = getWorld();
         Actor boat = getOneIntersectingObject(Exit.class);          
         if (boat == out){
+            Greenfoot.playSound("Score.mp3");
             scoreUp();
             world.removeObject(this);
         }
         else if (isTouching(Exit.class)){
             world.removeObject(this);
+            Greenfoot.playSound("Explosion.mp3");
         }
     }
 
