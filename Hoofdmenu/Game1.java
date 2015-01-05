@@ -45,7 +45,6 @@ public class Game1 extends World
        else {
             spawnRateMedium();
         }
-
     }
 
     public void spawnRateSlow()
@@ -93,9 +92,17 @@ public class Game1 extends World
         }  
         spawnCounter++;  
     }
-
-
-
+    private GreenfootSound gameSound1 = new GreenfootSound("OceanWave.mp3");
+    
+    public void started()
+    {
+        gameSound1.playLoop();
+    }
+    public void stopped()
+    {
+        gameSound1.stop();
+    }
+    
     public void prepare()
     {
         // Exit exit1 = new Exit("paars");
@@ -144,5 +151,7 @@ public class Game1 extends World
         addObject(score, 840, 790);
         theCounter = new Counter();
         addObject(theCounter, 840, 820);
+        gameSound1.playLoop();
     }
+    
 }

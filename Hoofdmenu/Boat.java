@@ -84,6 +84,8 @@ public class Boat extends Actor
         if (haven != null || boat != null) {
             World world;
             world = getWorld();
+            Explosion explosion = new Explosion();
+            world.addObject(explosion, getX(), getY());
             crashedBoat();
             world.removeObject(this);
             Greenfoot.playSound("Explosion.mp3");
