@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=boolean\ getTruckState()
+comment1.params=
+comment1.target=boolean\ getTrainState()
+comment2.params=
+comment2.target=void\ stopTruck()
+comment3.params=
+comment3.target=void\ allowTruckToMove()
+comment4.params=
+comment4.target=void\ stopTrain()
+comment5.params=
+comment5.target=void\ allowTrainToMove()
+numComments=6
