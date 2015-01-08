@@ -16,18 +16,28 @@ public class Containergame2 extends Vehicle
     private final String bigContainerLightImageFullPath = "images/Small/big-light.png";
     private final String smallContainerDarkImageFullPath = "images/Small/small-dark.png";
     private final String smallContainerLightImageFullPath = "images/Small/small-light.png";
+    /**
+     * The speed of the container
+     */
     public int speed = 1;
+    /**
+     * True when the container is loaded
+     */
     public boolean loaded = false;
+    /**
+     * The type of the container
+     */
     public int t;
 
-    /** do whatever the Container wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
     public Containergame2(){
 
         setContainer(getRandomContainerType());
     }
-
+    /**
+     * Sets the correct image for the container
+     * 
+     */
     public void setContainer(int type)
     {
         t = type;
@@ -58,14 +68,15 @@ public class Containergame2 extends Vehicle
             }
         }
     }
-
+    /**
+     * returns a random number for the container type
+     */
     public int getRandomContainerType(){
         return Greenfoot.getRandomNumber(4);
     }
 
     public void act() 
     {
-        // Add your action code here.
         if(isAtEdge() && checkLoadingState()){
             getWorld().removeObject(this);
             return;
@@ -93,49 +104,55 @@ public class Containergame2 extends Vehicle
         }
         
     }    
-
+    /**
+     * returns true when the container is loaded
+     */
     public boolean checkLoadingState(){
         return loaded;
     }
-
+    /**
+     * Moves the container up at a certain speed
+     */
     public void moveContainer()
     {
         this.setLocation(getX(), getY() - speed);
-
     }
-
+    /**
+     * Returns the truck that is pulling the container forward
+     */
     private Truck getPullingTruck()
     {
-        Truck x = (Truck) getWorld().getObjects(Truck.class).get(0);
-
-        return x;
+        return (Truck) getWorld().getObjects(Truck.class).get(0);
     }
-
+    /**
+     * Stops the truck when the Y is 450 and the container is not loaded
+     */
     private boolean atTruckStop()
     {
         if(getY() == 450 && !checkLoadingState()){
             Truck x = getPullingTruck();
             if(x != null)
             {
-
                 stopTruck();
                 x.stopTruck();
-                return true;
-
-                
+                return true;                
             }
             return false;
         }
         return false;
 
     }
-
+    /**
+     * Creates a new truck
+     */
     private void addTruck()
     {
         Truck x = new Truck(4);
         getWorld().addObject(x,108,900);
     }
-
+    /**
+     * Returns true when a new truck is needed
+     */
     private boolean canAddTruck()
     {
         if(getY() == 2){

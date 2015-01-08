@@ -35,12 +35,16 @@ public class Truck extends Vehicle
         }
 
     }    
-
+    /**
+     * Moves the truck at a certain speed
+     */
     public void moveTruck() 
     {
         setLocation(getX(), getY() - speed);
     }
-
+    /**
+     * Adds a new contianer to the world when needed
+     */
     private void spawnContainer()
     {
         if(getY() == 850){

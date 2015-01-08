@@ -32,14 +32,18 @@ public class Train extends Vehicle
             getWorld().removeObject(this);
         }
     }  
-
+    /**
+     * Creates a new wagon and adds it to the world
+     */
     private void createNewWagon(int spawnPoint)
     {
 
         Wagon w = new Wagon(spawnPoint);
         getWorld().addObject(w,40,900);
     }
-
+    /**
+     * Returns true when all the wagons are loaded
+     */
     private boolean allWagonsLoaded()
     {
         boolean condition = true;
@@ -65,7 +69,9 @@ public class Train extends Vehicle
             return false;
         }
     }
-
+    /**
+     * Returns true when the train has arrived at it's stopping point
+     */
     private boolean trainHasToStop(){
         if(getY() == 480)
         {
@@ -75,7 +81,9 @@ public class Train extends Vehicle
             return false;
         }
     }
-
+    /**
+     * Creates a new wagon if needed
+     */
     private void  requestNewWagon()
     {
         if(getY() == 850)
@@ -92,7 +100,9 @@ public class Train extends Vehicle
         }
 
     }
-
+    /**
+     * Moves the train at a certain speed
+     */
     private void moveTrain()
     {
         setLocation(getX(), getY() - speed);
