@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ joinSeperateLists()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ MiniGame1.\n\ \n
+comment1.params=index
+comment1.target=void\ removeFromList(int)
+comment2.params=
+comment2.target=java.util.List\ getContainerList()
+comment3.params=
+comment3.target=MiniGame2()
+comment4.params=
+comment4.target=void\ prepareWorld()
+comment5.params=
+comment5.target=void\ prepare()
+comment6.params=main\ count
+comment6.target=void\ addToList(MainContainer,\ int)
+numComments=7
